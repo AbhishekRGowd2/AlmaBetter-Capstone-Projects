@@ -11,6 +11,20 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+app.get("/", (req, res) => {
+    res.send(`
+        <h2>Book My Show API</h2>
+        <p>Available routes:</p>
+        <ul>
+            <li><a href="/api/booking">GET /api/booking</a> - Get all bookings</li>
+            <li><a href="/api/booking/latest">GET /api/booking/latest</a> - Get latest booking</li>
+            <li><a href="/api-docs">Swagger Docs</a> - API documentation</li>
+        </ul>
+        <p>Use POST /api/booking to create a new booking.</p>
+    `);
+});
+
+
 /**
  * @swagger
  * components:

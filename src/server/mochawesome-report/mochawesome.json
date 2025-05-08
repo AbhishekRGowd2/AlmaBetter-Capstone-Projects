@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-08T13:37:02.908Z",
+    "end": "2025-05-08T13:37:03.462Z",
+    "duration": 554,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "295fb03f-86a1-4360-a3cb-aaf8524265d4",
+      "title": "",
+      "fullFile": "E:\\OneDrive\\Desktop\\Capstone-Module-4\\AlmaBetter-Capstone-Projects\\src\\server\\test\\booking.test.js",
+      "file": "\\test\\booking.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2f9defdd-7088-4bbb-8bcc-e23f227ff4bd",
+          "title": "Booking API Tests",
+          "fullFile": "E:\\OneDrive\\Desktop\\Capstone-Module-4\\AlmaBetter-Capstone-Projects\\src\\server\\test\\booking.test.js",
+          "file": "\\test\\booking.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return 400 when required fields are missing",
+              "fullTitle": "Booking API Tests should return 400 when required fields are missing",
+              "timedOut": false,
+              "duration": 127,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request(app).post(\"/api/booking\").send({\n  movie: \"Inception\"\n  // missing seats and slot\n});\nexpect(res.status).to.equal(400);\nexpect(res.body.message).to.equal(\"Invalid input. Please provide movie, seats, and slot.\");",
+              "err": {},
+              "uuid": "bd6a983c-ae98-4772-85eb-2c04f95e87e5",
+              "parentUUID": "2f9defdd-7088-4bbb-8bcc-e23f227ff4bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return 200 and bookingId when data is valid",
+              "fullTitle": "Booking API Tests should return 200 and bookingId when data is valid",
+              "timedOut": false,
+              "duration": 343,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request(app).post(\"/api/booking\").send({\n  movie: \"The Matrix\",\n  seats: 2,\n  slot: \"Evening\"\n});\nexpect(res.status).to.equal(200);\nexpect(res.body).to.have.property(\"bookingId\");",
+              "err": {},
+              "uuid": "de1f7e0e-36bf-4f6b-bfbf-f894b03e34d6",
+              "parentUUID": "2f9defdd-7088-4bbb-8bcc-e23f227ff4bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return 200 and an array of bookings",
+              "fullTitle": "Booking API Tests should return 200 and an array of bookings",
+              "timedOut": false,
+              "duration": 44,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request(app).get(\"/api/booking\");\nexpect(res.status).to.equal(200);\nexpect(res.body).to.be.an(\"array\");",
+              "err": {},
+              "uuid": "cc829c88-6eb0-4d3f-ba00-faa595c3332f",
+              "parentUUID": "2f9defdd-7088-4bbb-8bcc-e23f227ff4bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return 200 and the latest booking",
+              "fullTitle": "Booking API Tests should return 200 and the latest booking",
+              "timedOut": false,
+              "duration": 29,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request(app).get(\"/api/booking/latest\");\nexpect([200, 404]).to.include(res.status); // Could be 404 if no bookings yet\nif (res.status === 200) {\n  expect(res.body).to.have.property(\"movie\");\n}",
+              "err": {},
+              "uuid": "b65d150e-1efb-432b-999c-3642b123d0bb",
+              "parentUUID": "2f9defdd-7088-4bbb-8bcc-e23f227ff4bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bd6a983c-ae98-4772-85eb-2c04f95e87e5",
+            "de1f7e0e-36bf-4f6b-bfbf-f894b03e34d6",
+            "cc829c88-6eb0-4d3f-ba00-faa595c3332f",
+            "b65d150e-1efb-432b-999c-3642b123d0bb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 543,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
