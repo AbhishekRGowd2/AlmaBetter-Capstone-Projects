@@ -1,0 +1,132 @@
+.movie-column, .seat-column, .slot-column {
+    /* display: inline-block; */
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    border: 1px rgb(0, 0, 0) ridge;
+    padding: 10px 15px;
+    line-height: 1px;
+    min-height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    /* box-shadow: 0 0 5px 5px; */
+}
+.seat-column-selected {
+    background-color: rgb(211, 115, 115);
+    color: white;
+}
+
+.movie-row, .seat-row, .slot-row {
+    border-radius: 10px;
+    border: 1px black ridge;
+    padding: 10px;
+    margin: 10px;
+    min-height: 30px
+    ;
+}
+.movie-column, .seat-column, .slot-column {
+    cursor: pointer; /* Ensure the cursor becomes a pointer on hover */
+}
+
+
+/* Default seat style */
+.seat-column {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
+    min-height: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Style for selected seats */
+  .seat-selected {
+    background-color: rgb(211, 115, 115); /* Red background */
+    color: white; /* White text for contrast */
+    font-weight: bold;
+  }
+  
+
+
+.btn {
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1em;
+    color: white;
+    background: rgb(44, 209, 88);
+    background: -moz-linear-gradient(233deg, rgba(44, 209, 88, 1) 0%, rgba(44, 108, 224, 1) 100%);
+    background: -webkit-linear-gradient(233deg, rgba(44, 209, 88, 1) 0%, rgba(44, 108, 224, 1) 100%);
+    background: linear-gradient(233deg, rgba(44, 209, 88, 1) 0%, rgba(44, 108, 224, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2cd158", endColorstr="#2c6ce0", GradientType=1);
+    padding: 5px 15px;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.movie-column-selected, .seat-column-selected, .slot-column-selected {
+    background: rgb(211, 115, 115);
+    /* box-shadow: 0 0 5px 5px; */
+}
+
+input {
+    width: 50px;
+    border-color: rgb(196, 196, 196);
+    border-width: 1px;
+}
+
+.lastBooking {
+    border-radius: 10px;
+    border: 1px black ridge;
+    padding: 10px;
+    margin: 10px;
+
+    ;
+}
+/* Container for the two sections */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  /* Left section styles */
+  .left-section {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  /* Right section styles */
+  .right-section {
+    flex: 0.4;
+    padding: 20px;
+  }
+  
+  /* Movie, Slot, and Seat styles */
+  .movie-column, .slot-column, .seat-column {
+    display: inline-block;
+    margin: 5px;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 15px;
+    line-height: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Selected styles */
+  .movie-column-selected,
+  .slot-column-selected,
+  .seat-column-selected {
+    background-color: rgb(211, 115, 115);
+    color: white;
+  }
+  
+  /* Last Booking box */
+  .lastBooking {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
