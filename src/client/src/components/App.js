@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 import "../styles/bootstrap.min.css";
+import Swal from 'sweetalert2';
 import { movies, slots, seats as seatTypes } from "./data"; // Rename the imported `seats` as `seatTypes`
 
 const App = () => {
@@ -61,7 +62,7 @@ const App = () => {
     console.log("Booking Data Sent:", bookingData);
 
     try {
-      const response = await fetch("http://localhost:8080/api/booking", {
+      const response = await fetch("https://book-my-show-3lr4.onrender.com/api/booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookingData),
@@ -75,6 +76,18 @@ const App = () => {
         setSelectedSlot(null);
         setSeatValues({});
         localStorage.clear();
+
+        // Custom Pop Up Alert 
+        Swal.fire({
+          title: '🎉 Booking Successful!',
+          text: 'Your tickets have been booked successfully.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          customClass: {
+            popup: 'sweetalert-popup',
+          },
+        });
+
       }
     } catch (error) {
       console.error("Error during booking:", error);
